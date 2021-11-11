@@ -22,14 +22,20 @@ library(here)
 
 ```{r commit 1}
 star <- import(here("data", "star.csv"))
+star <- star %>% 
+  clean_names()
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r commit 3}
+star %>% 
+  group_by(sex, frl) %>% 
+  summarize(math_mean = mean(tmathss), math_sd = sd(tmathss),
+         rdg_mean = mean(treadss), rdg_sd = sd(treadss)) %>%
+  select(sex, frl, math_mean, math_sd, rdg_mean, rdg_sd) %>% 
+  as.tibble()
+  
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
