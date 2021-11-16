@@ -1,8 +1,9 @@
 ---
 title: "lab_8"
-author: "Yijun Cheng"
+author: "Yijun Cheng & Claire Guidinger"
 date: "11/10/2021"
 output: pdf_document
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -16,6 +17,8 @@ library(rio)
 library(janitor)
 library(dplyr)
 library(here)
+tinytex::install_tinytex()
+library(tinytex)
 ```
 
 
@@ -26,7 +29,16 @@ star <- star %>%
   clean_names()
 ```
 
+```{r commit 2}
+#Bibliography
+```
 
+
+Here are my citations: @barnett2001body, @braun1999more, @kelly2018perceptions, @lavender2017men. I used the @tidyverse and @rio packages.
+
+\newpage
+
+# References
 
 ```{r commit 3}
 star %>% 
