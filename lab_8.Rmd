@@ -15,6 +15,10 @@ library(tidyverse)
 library(rio)
 library(janitor)
 library(dplyr)
+```
+
+
+```{r setup, include=FALSE}
 library(here)
 ```
 
@@ -38,4 +42,23 @@ star %>%
   
 ```
 
+```{r commit 4}
+star %>% 
+  group_by(frl) %>% 
+  ggplot(aes(totexp, tmathss))+
+  geom_point()+
+  geom_smooth(method = "lm", aes(color = frl)) +
+  labs(
+    title = "Relation between teacher experiences and math scores",
+    subtitle = "Separate regrression lines displayed by free/reduced price lunch status",
+    x = "Teacher Experience (years)", 
+    y = "Total Math Sacle Score",
+    color = "Lunch status"
+    ) +
+  theme_minimal()+
+theme(legend.position="bottom", legend.box = "horizontal")
+
+    
+
+```
 
