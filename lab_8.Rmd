@@ -16,14 +16,9 @@ library(tidyverse)
 library(rio)
 library(janitor)
 library(dplyr)
-```
-
-
-```{r setup, include=FALSE}
 library(here)
-tinytex::install_tinytex()
-library(tinytex)
 ```
+
 
 
 
