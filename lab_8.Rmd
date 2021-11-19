@@ -22,13 +22,13 @@ library(here)
 
 
 
-```{r commit 1}
+```{r commit1}
 star <- import(here("data", "star.csv"))
 star <- star %>% 
   clean_names()
 ```
 
-```{r commit 2}
+```{r commit2}
 #Bibliography
 ```
 
@@ -39,7 +39,7 @@ Here are my citations: @barnett2001body, @braun1999more, @kelly2018perceptions, 
 
 # References
 
-```{r commit 3}
+```{r commit3}
 star %>% 
   group_by(sex, frl) %>% 
   summarize(math_mean = mean(tmathss), math_sd = sd(tmathss),
@@ -49,7 +49,7 @@ star %>%
   
 ```
 
-```{r commit 4}
+```{r commit4}
 star %>% 
   group_by(frl) %>% 
   ggplot(aes(totexp, tmathss))+
